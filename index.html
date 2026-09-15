@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Paulo Henrique" />
+  <meta name="description" content="Calculadora digital com teclado, histórico, porcentagem e visual de terminal verde." />
+  <meta name="theme-color" content="#0b0f0b" />
+  <title>Calculadora Digital — Paulo Henrique</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='10' y='6' width='44' height='52' rx='8' fill='%230b0f0b' stroke='%2339ff88' stroke-width='4'/%3E%3Crect x='18' y='14' width='28' height='10' rx='2' fill='%2339ff88'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="calc" aria-label="Calculadora">
+    <header class="calc__top">
+      <span class="brand">CALC<span>.</span>DIGITAL</span>
+      <button class="hist-btn" id="hist-btn" aria-expanded="false" aria-controls="historico">Histórico</button>
+    </header>
+
+    <div class="screen">
+      <p class="expr" id="expr" aria-hidden="true">&nbsp;</p>
+      <output class="result" id="result" aria-live="polite" aria-atomic="true">0</output>
+    </div>
+
+    <aside class="history" id="historico" hidden>
+      <div class="history__head"><h2>Histórico</h2><button id="limpar-hist">Limpar</button></div>
+      <ol id="hist-lista"><li class="empty">Nenhum cálculo ainda.</li></ol>
+    </aside>
+
+    <div class="keys" id="keys">
+      <button class="k k--fn" data-a="clear" aria-label="Limpar tudo">AC</button>
+      <button class="k k--fn" data-a="back" aria-label="Apagar">⌫</button>
+      <button class="k k--fn" data-a="percent" aria-label="Porcentagem">%</button>
+      <button class="k k--op" data-op="/" aria-label="Dividir">÷</button>
+
+      <button class="k" data-n="7">7</button>
+      <button class="k" data-n="8">8</button>
+      <button class="k" data-n="9">9</button>
+      <button class="k k--op" data-op="*" aria-label="Multiplicar">×</button>
+
+      <button class="k" data-n="4">4</button>
+      <button class="k" data-n="5">5</button>
+      <button class="k" data-n="6">6</button>
+      <button class="k k--op" data-op="-" aria-label="Subtrair">−</button>
+
+      <button class="k" data-n="1">1</button>
+      <button class="k" data-n="2">2</button>
+      <button class="k" data-n="3">3</button>
+      <button class="k k--op" data-op="+" aria-label="Somar">+</button>
+
+      <button class="k" data-a="sign" aria-label="Inverter sinal">±</button>
+      <button class="k" data-n="0">0</button>
+      <button class="k" data-a="dot" aria-label="Vírgula">,</button>
+      <button class="k k--eq" data-a="equals" aria-label="Igual">=</button>
+    </div>
+    <p class="tip">Use o teclado: números, + − * /, Enter, Backspace, Esc</p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
